@@ -1,30 +1,27 @@
 var questions = [
-    {
-        title: "What special character is used at the end of a function?",
-        choices: ["1. :", "2. '", "3. /", "4. }"],
-        answer: "4. }"
-    },
-    {
-        title: "A 'confirm' statement gives you a ______ result.",
-        choices: ["1. string", "2. array", "3. boolean", "4. square brackets"],
-        answer: "3. boolean"
-    },
-    {
-        title: "In this for loop, if you wanted add one each loop through you would use what in the blank?: for (var i = 0; i < vegetables.length; ___ )",
-        choices: ["1. i++", "2. +=", "3. /", "4. ==="],
-        answer: "1. i++"
-    },
-    {
-        title: "In this array: var animals = [dogs, horses, cows, pigs]; which one is the index of [4]? ",
-        choices: ["1. dogs", "2. cows", "3. pigs", "4. none of the above"],
-        answer: "4. none of the above"
-    },
-    {
-        title: "There are four parts to a box model.  Which one is missing: Margin, padding, content?",
-        choices: ["1. size", "2. border", "3. position", "4. width"],
-        answer: "2. border"
-    },
-
+  {
+    title: "What is the world's oldest dog breed?",
+    choices: ["German Shepherd", "Pomeranian", "Saluki", "Golden Retriever"],
+    answer: "Saluki"
+  },
+  {
+    title: "Dachshunds were originally bred to ____?",
+    choices: ["look like a hot dog", "be small but mighty", "take over the world", "fight off badgers"],
+    answer: "fight off badgers"
+  },
+  {
+    title: "Why do dogs carefully pick the perfect place to do its business?",
+    choices: ["they prefer to poop in alignment with Earth's magnetic field", "no reason", "really no reason", "seriously, no reason"],
+    answer: "they prefer to poop in alignment with Earth's magnetic field"
+  },
+  {
+    title: "How much stronger is a dog's sense of smell than humans?",
+    choices: ["x100", "x50,000", "x750,000", "x100,000"],
+    answer: "x100,000"
+  },
+  {
+    title: "Why do dog's have wet noses?",
+    choices: ["they just drank water", "to absorb scent chemicals", "bad allergies", "to keep their whiskers clean"],
+    answer: "to absorb scent chemicals"
+  }
 ];
-
-console.log(questions);
