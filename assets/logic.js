@@ -86,3 +86,33 @@ document.addEventListener("DOMContentLoaded", function (event) {  //waits for pa
         questCard.style.display = "block";
         beginGame();
     });
+
+      //score list
+      scoreLink.addEventListener("click", function (event) {
+        event.preventDefault();
+        if (scoreShown) {
+            scoreShown = false;
+            scoreCard.style.display = "none";
+        } else {
+            scoreShown = true;
+            scoreCard.style.display = "block";
+        }
+        scoreSet();
+    });
+
+    //set scores hidden by default
+    scoreCard.style.display = "none";
+
+    //clearing saved scores
+    clearBtn.addEventListener("click", function (event) {
+        event.preventDefault();
+        clearScores();
+    });
+
+    //assigning listeners to answer buttons
+    var addBtns = document.getElementsByClassName("answerBtn");
+    for (var i = 0; i < addBtns.length; i++) {
+        addBtns[i].removeEventListener("click",userChoice,false);
+        addBtns[i].addEventListener("click", userChoice, false);
+
+    }
