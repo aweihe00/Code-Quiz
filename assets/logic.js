@@ -67,3 +67,22 @@ document.addEventListener("DOMContentLoaded", function (event) {  //waits for pa
         }
         return array;
     }
+
+    //card content resets to the next questions
+    function setQuestion(index) {
+        questText.textContent = questions[index].title;
+        let choiceArray = questions[index].choices
+        choiceArray = shuffle(choiceArray)      //shuffling answer options
+
+        a.textContent = choiceArray[0];
+        b.textContent = choiceArray[1];
+        c.textContent = choiceArray[2];
+        d.textContent = choiceArray[3];
+    }
+
+    //adding event listeners to buttons
+    startBtn.addEventListener("click", function () {
+        initCard.style.display = "none";
+        questCard.style.display = "block";
+        beginGame();
+    });
