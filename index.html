@@ -5,13 +5,71 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Dog Quiz</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+       integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="assets/style.css">
-    <title>The Dog Quiz</title>
 </head>
 
+<!--Created navbar w/Timer set at 0-->
+
 <body>
+  <nav class="navbar fixed-top navbar-light bg-light">
+    <span id="scoreLink" class="navbar-text btn btn-primary">
+       High Scores</span>
+    <a class="navbar-brand">The Dog Quiz</a>
+    <span id="timerText" class ="navbar-text">
+       Timer: <span id="timer">0</span>
+    </span>
+  </nav>
 
-
+<!--container for main screen-->
+<div id="initialCard">
+  <div class="row justify content center">
+    <div class="col col-sm-10 col-md-8 align-self-center">
+        <div class="card text-center">
+          <h4 id="alert" class="card-header">Latest High Scores</h4>
+          <div class="card-body">
+              <h4 class="card-title">Click button to begin</h4>
+              <p id="instructions" class="card-text"></p>
+              <span id="startButton" class="btn btn-primary">START</span>
+              </div>
+              <div class="card-footer text-muted">
+           
+             </div>
+           </div>
+        </div>
+    </div>
+ </div>
+ 
+ <!-- container for the questions  -->
+ <div id="questionCard">
+        <div class="row justify-content-center">
+          <div class="col col-sm-10 col-md-8 align-self-center">
+            <div class="card">
+              <textarea id="questionPrompt" class="card-header">Question 1</textarea>
+              <div id="answerArea" class="card-body">
+                <!-- <h5 class="card-title">(Question)</h5> -->
+                <span id="AnswerBtnA" class="answerBtn btn btn-primary"> A </span>
+                <span id="AnswerA" class="card-text">Answer A</span>
+                <hr>
+                <span id="AnswerBtnB" class="answerBtn btn btn-primary"> B </span>
+                <span id="AnswerB" class="card-text">Answer B</span>
+                <hr>
+                <span id="AnswerBtnC" class="answerBtn btn btn-primary"> C </span>
+                <span id="AnswerC" class="card-text">Answer C</span>
+                <hr>
+                <span id="AnswerBtnD" class="answerBtn btn btn-primary"> D </span>
+                <span id="AnswerD" class="card-text">Answer D</span>
+                <hr>
+              </div>
+              <div id="footer" class="card-footer text-center text-muted">
+                Answer...
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
 
 
 
