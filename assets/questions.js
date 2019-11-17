@@ -6,7 +6,7 @@ var questions = [
   },
   {
     title: "Dachshunds were originally bred to ____?",
-    choices: ["look like a hot dog", "be small but mighty", "take over the world", "fight off badgers"],
+    choices: ["defend livestock", "be small but mighty", "take over the world", "fight off badgers"],
     answer: "fight off badgers"
   },
   {
