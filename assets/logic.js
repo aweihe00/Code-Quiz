@@ -141,8 +141,100 @@ document.addEventListener("DOMContentLoaded", function (event) {  //waits for pa
         if (iter < (newQuestions.length - 1)) {
             iter++;
             setQuestion(iter);
-        } else if (iter === (newQuestions.length - 1)) {  //kick out of game but not reseting question to undefined
+        } else if (iter === (newQuestions.length - 1)) {  //kick out of game but doesn't reset question to undefined
             iter++;
         }
 
     }
+
+    //building scorecard 
+    function scoreSet() {
+        scoreList = JSON.parse(localStorage.getItem("scores") || "[]");
+        highScoreList.innerHTML = "";
+        console.log(scoreList);
+
+        scoreList.sort(function (a, b) {  //sorting scores from highest to lowest
+            return parseInt(b.score) - parseInt(a.score);  //if positive, sorts higher, negative, sorts lower
+        });
+        console.log(scoreList);
+
+        if (scoreList.length === 0) {  //checking for stored values
+            clearBtnArea.style.display = "none";
+            alert.textContent = "See how well you can do!";
+        } else {
+            clearBtnArea.style.display = "block";
+            maxScore = scoreList[0].score; //current high score
+            alert.textContent = "Previous high score: " + maxScore;
+        }
+        //building score list
+        for (let j = 0; j < scoreList.length; j++) {
+            var scoreDisp = scoreList[j].user + ": " + scoreList[j].score;
+
+            var li = document.createElement("li");
+            li.textContent = scoreDisp;
+            highScoreList.appendChild(li);
+        }
+    }
+
+        //clearing saved scores and storage
+    function clearScores() {
+        scoreList = [];
+        localStorage.setItem("scores", JSON.stringify(scoreList));
+        scoreSet();
+
+    }
+
+    //ending game, caclulating and storing scores
+    function endGame() {
+        clearInterval(interval);
+        endTime = timer;
+        timer = 0;
+        timerDisp.textContent = timer;
+        console.log("wins " + correct + ", Losses " + wrong + ", " + endTime);
+        initCard.style.display = "block";
+        questCard.style.display = "none";
+
+        let highscore = (correct * problemTime + endTime);  //score formula
+        let userInput = prompt(`Your score is ${correct * problemTime + endTime}. Enter your initials:`);
+        if (userInput === null) {  //prevents saving nulls if no user input
+            userInput = "";
+        }
+        scoreList = JSON.parse(localStorage.getItem("scores") || "[]");
+        scoreList.push({ score: highscore, user: userInput });
+
+        localStorage.setItem("scores", JSON.stringify(scoreList));
+        scoreSet();
+
+        footer.textContent = "Going to better your score..eh?";
+    }
+
+   // starting game, initializing counters and intervals
+   function beginGame() {
+    correct = 0;
+    wrong = 0;
+    iter = 0;
+    timer = questions.length * problemTime;  //initial timer length set
+
+    newQuestions = shuffle(newQuestions);   //questions randomly arranged
+
+    setQuestion(iter);
+
+    interval = setInterval(function () {   //timer initialized
+
+        timerDisp.textContent = timer;
+        timer--;
+
+        if (timer < 0) {  //if time runs out, end game
+            endGame();
+
+        } else if (iter >= newQuestions.length) {   //if questions run out, end game
+            endGame();
+        }
+
+
+    }, 1000);
+
+}
+
+
+}); 
