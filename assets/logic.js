@@ -24,7 +24,24 @@ document.addEventListener("DOMContentLoaded", function (event) {  //waits for pa
     var c = document.getElementById("AnswerC");
     var d = document.getElementById("AnswerD");
     //Answer buttons
-    var aBtn = document.getElementById("AnswerBtnA");
-    var bBtn = document.getElementById("AnswerBtnB");
-    var cBtn = document.getElementById("AnswerBtnC");
-    var dBtn = document.getElementById("AnswerBtnD");
+    var BtnA = document.getElementById("AnswerBtnA");
+    var BtnB = document.getElementById("AnswerBtnB");
+    var BtnC = document.getElementById("AnswerBtnC");
+    var BtnD = document.getElementById("AnswerBtnD");
+
+    //variable stack - noramlly wouldn't use globals but it's a small application (and I'm novice)
+    var problemTime = 15;    //time per question and points factor
+    var penalty = 5;        //time penalty for a wrong answer
+    //Modify the above to change the quiz dynamics
+    
+    var iter = 0;
+    var timer = 75;
+    var endTime = 0;
+    var correct = 0;
+    var wrong = 0;
+    var user = "";
+    var score = 0;
+    var newQuestions = questions;
+    var scoreList = [];
+    var maxScore = 0;
+    var scoreShown = false;
