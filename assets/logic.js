@@ -112,7 +112,37 @@ document.addEventListener("DOMContentLoaded", function (event) {  //waits for pa
     //assigning listeners to answer buttons
     var addBtns = document.getElementsByClassName("answerBtn");
     for (var i = 0; i < addBtns.length; i++) {
-        addBtns[i].removeEventListener("click",userChoice,false);
+        //addBtns[i].removeEventListener("click",userChoice,false);
         addBtns[i].addEventListener("click", userChoice, false);
+    }
+
+    //runs initial scoreSet in case there is saved data
+    scoreSet();
+
+    //when the user selects an answer this checks if it's correct
+    function userChoice(event) {
+        event.preventDefault();
+
+        let userAnswer = "";
+        userAnswer = event.target.nextElementSibling.textContent;
+        // console.log(userAnswer);
+        if (userAnswer === newQuestions[iter].answer) {
+            console.log("win");
+            console.log(iter);
+            correct++;
+            footer.textContent = "Right!"
+        } else {
+            console.log("lose");
+            console.log(iter);
+            timer -= penalty; //5 seconds (or penalty) lost for wrong answer
+            wrong++;
+            footer.textContent = "Wrong!"
+        }
+        if (iter < (newQuestions.length - 1)) {
+            iter++;
+            setQuestion(iter);
+        } else if (iter === (newQuestions.length - 1)) {  //kick out of game but not reseting question to undefined
+            iter++;
+        }
 
     }
