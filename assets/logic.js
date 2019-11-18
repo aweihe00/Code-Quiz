@@ -47,7 +47,7 @@ document.addEventListener("DOMContentLoaded", function (event) {  //waits for pa
     var scoreShown = false;
 
     //quiz info on how scores are calc
-    instructions.textContent = ("Your score is the number of correct answers times "+problemTime+", plus the time left. Be careful, wrong answers will subtract "+penalty+" seconds from the time left!");
+    instructions.textContent = ("Your score is the number of correct answers x"+problemTime+", plus the time left. Be careful, wrong answers will subtract "+penalty+" seconds from the time left over!");
 
     //Randomize array element order in-place.
     function shuffle(array) {
