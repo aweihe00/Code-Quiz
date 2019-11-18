@@ -159,7 +159,7 @@ document.addEventListener("DOMContentLoaded", function (event) {  //waits for pa
 
         if (scoreList.length === 0) {  //checking for stored values
             clearBtnArea.style.display = "none";
-            alert.textContent = "See how well you can do!";
+            alert.textContent = "Lets see what you got!";
         } else {
             clearBtnArea.style.display = "block";
             maxScore = scoreList[0].score; //current high scores
