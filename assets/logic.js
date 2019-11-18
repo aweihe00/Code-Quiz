@@ -47,7 +47,7 @@ document.addEventListener("DOMContentLoaded", function (event) {  //waits for pa
     var scoreShown = false;
 
     //quiz info on how scores are calc
-    instructions.textContent = ("Your score is the number of correct answers times "+problemTime+", plus the time left. Be careful - wrong answers will also subtract "+penalty+" seconds from the time remaining!");
+    instructions.textContent = ("Your score is the number of correct answers times "+problemTime+", plus the time left. Be careful, wrong answers will subtract "+penalty+" seconds from the time left!");
 
     //Randomize array element order in-place.
     function shuffle(array) {
@@ -112,7 +112,6 @@ document.addEventListener("DOMContentLoaded", function (event) {  //waits for pa
     //assigning listeners to answer buttons
     var addBtns = document.getElementsByClassName("answerBtn");
     for (var i = 0; i < addBtns.length; i++) {
-        //addBtns[i].removeEventListener("click",userChoice,false);
         addBtns[i].addEventListener("click", userChoice, false);
     }
 
@@ -141,7 +140,7 @@ document.addEventListener("DOMContentLoaded", function (event) {  //waits for pa
         if (iter < (newQuestions.length - 1)) {
             iter++;
             setQuestion(iter);
-        } else if (iter === (newQuestions.length - 1)) {  //kick out of game but doesn't reset question to undefined
+        } else if (iter === (newQuestions.length - 1)) {  //kicks user out of game but doesn't reset question to undefined
             iter++;
         }
 
@@ -163,7 +162,7 @@ document.addEventListener("DOMContentLoaded", function (event) {  //waits for pa
             alert.textContent = "See how well you can do!";
         } else {
             clearBtnArea.style.display = "block";
-            maxScore = scoreList[0].score; //current high score
+            maxScore = scoreList[0].score; //current high scores
             alert.textContent = "Previous high score: " + maxScore;
         }
         //building score list
@@ -224,7 +223,7 @@ document.addEventListener("DOMContentLoaded", function (event) {  //waits for pa
         timerDisp.textContent = timer;
         timer--;
 
-        if (timer < 0) {  //if time runs out, end game
+        if (timer < 0) {  //if timer runs out, end game
             endGame();
 
         } else if (iter >= newQuestions.length) {   //if questions run out, end game

@@ -14,12 +14,12 @@ textarea {
 
 .navbar-text {
   font-weight: bold;
+  background-color: #eff310
 }
 
 #timerText {
   color: #fff;
-  background-color: #007bff;
-  border-color: #007bff;
+  background-color: #10f32e;
   display: inline-block;
   font-weight: bold;
   color: #212529;
