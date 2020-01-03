@@ -20,9 +20,7 @@ When time runs out and/or all questions are answered, the user is presented with
 
 Your application should also be responsive, ensuring that it adapts to multiple screen sizes.
 
-![screenshot](https://user-images.githubusercontent.com/56567819/69092068-3fd70780-0a11-11ea-8131-30efc3a5cae7.png)
-
-
+![Capture](https://user-images.githubusercontent.com/56567819/71752025-26fca700-2e43-11ea-859f-7ea15f48621e.PNG)
 
 Scoring is caluclated as: (number of questions correct) X ([const]time set per question) + (time remaining)
 
