@@ -3,6 +3,8 @@ Unit 04 Web APIs Code-Quiz HW
 
 As you proceed in your career as a web developer, you will probably be asked to complete a coding assessment. These assessments are typically a combination of multiple-choice questions and interactive challenges. In this homework assignment, your challenge is to build a code quiz with multiple-choice questions.
 
+Link to deployed site https://aweihe00.github.io/Code-Quiz/
+
 Instructions
 From scratch, build a timer-based quiz application that stores high scores client-side.
 
