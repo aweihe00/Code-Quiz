@@ -2,11 +2,7 @@
 
 ## Unit 04 Web APIs Code-Quiz HW
 
-As you proceed in your career as a web developer, you will probably be asked to complete a coding assessment. These assessments are typically a combination of multiple-choice questions and interactive challenges. In this homework assignment, your challenge is to build a code quiz with multiple-choice questions.
-
-Link to deployed site https://aweihe00.github.io/Code-Quiz/
-
-## Instructions: 
+## Instructions:
 
 From scratch, build a timer-based quiz application that stores high scores client-side.
 
@@ -20,11 +16,12 @@ Score is calculated by time remaining. Answering quickly and correctly results i
 
 When time runs out and/or all questions are answered, the user is presented with their final score and asked to enter their initials. Their final score and initials are then stored in localStorage.
 
-Your application should also be responsive, ensuring that it adapts to multiple screen sizes.
+![Capture](https://user-images.githubusercontent.com/56567819/71752025-26fca700-2e43-11ea-859f-7ea15f48621e.PNG)
 
-![screenshot](https://user-images.githubusercontent.com/56567819/69092068-3fd70780-0a11-11ea-8131-30efc3a5cae7.png)
+Link to deployed site https://aweihe00.github.io/Code-Quiz/
 
 ## Functionality
+
 Scoring is caluclated as: (number of questions correct) X ([const]time set per question) + (time remaining)
 
 The 'High Scores' button toggles the display card of scores.
